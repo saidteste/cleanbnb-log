@@ -1,7 +1,11 @@
-import { Layout } from '@/components/Layout';
+import { DeliveryBooking } from "@/components/DeliveryBooking";
 
 const Index = () => {
-  return <Layout />;
+  return (
+    <div className="min-h-screen bg-gradient-subtle">
+      <DeliveryBooking />
+    </div>
+  );
 };
 
 export default Index;
