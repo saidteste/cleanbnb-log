@@ -4,19 +4,27 @@ import {
   Home, 
   Calendar, 
   FileText, 
-  Camera, 
-  DollarSign, 
-  ClipboardList, 
-  Sparkles,
+  Building2,
   Menu,
-  X
+  X,
+  Sparkles,
+  MessageSquare,
+  TrendingUp,
+  BarChart3,
+  Bell,
+  Users
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Dashboard } from '@/components/Dashboard';
+import { PropertiesSection } from '@/components/sections/PropertiesSection';
 import { ReservationsSection } from '@/components/sections/ReservationsSection';
-import { InspectionsSection } from '@/components/sections/InspectionsSection';
-import { RevenueSection } from '@/components/sections/RevenueSection';
 import { CleaningSection } from '@/components/sections/CleaningSection';
+import { CommunicationSection } from '@/components/sections/CommunicationSection';
+import { RevenueSection } from '@/components/sections/RevenueSection';
+import { StatisticsSection } from '@/components/sections/StatisticsSection';
+import { DocumentsSection } from '@/components/sections/DocumentsSection';
+import { NotificationsSection } from '@/components/sections/NotificationsSection';
+import { TeamSection } from '@/components/sections/TeamSection';
 
 interface LayoutProps {
   children?: ReactNode;
@@ -29,34 +37,40 @@ interface NavigationItem {
 }
 
 const navigationItems: NavigationItem[] = [
-  { id: 'dashboard', label: 'Dashboard', icon: Home },
+  { id: 'dashboard', label: 'Tableau de bord', icon: Home },
+  { id: 'properties', label: 'Logements', icon: Building2 },
   { id: 'reservations', label: 'Réservations', icon: Calendar },
-  { id: 'inspections', label: 'États des lieux', icon: Camera },
-  { id: 'reports', label: 'Comptes rendus', icon: FileText },
-  { id: 'revenue', label: 'Revenus', icon: DollarSign },
-  { id: 'cleaning', label: 'Ménage', icon: Sparkles },
+  { id: 'cleaning', label: 'Ménage & Maintenance', icon: Sparkles },
+  { id: 'communication', label: 'Communication', icon: MessageSquare },
+  { id: 'revenue', label: 'Finances', icon: TrendingUp },
+  { id: 'statistics', label: 'Statistiques', icon: BarChart3 },
+  { id: 'documents', label: 'Documents', icon: FileText },
+  { id: 'notifications', label: 'Notifications', icon: Bell },
+  { id: 'team', label: 'Équipe', icon: Users },
 ];
 
 const renderContent = (activeTab: string) => {
   switch (activeTab) {
     case 'dashboard':
       return <Dashboard />;
+    case 'properties':
+      return <PropertiesSection />;
     case 'reservations':
       return <ReservationsSection />;
-    case 'inspections':
-      return <InspectionsSection />;
-    case 'revenue':
-      return <RevenueSection />;
     case 'cleaning':
       return <CleaningSection />;
-    case 'reports':
-      return (
-        <div className="text-center py-12">
-          <ClipboardList className="mx-auto h-12 w-12 text-muted-foreground mb-4" />
-          <h2 className="text-2xl font-bold text-foreground mb-2">Comptes rendus</h2>
-          <p className="text-muted-foreground">Cette section sera disponible prochainement</p>
-        </div>
-      );
+    case 'communication':
+      return <CommunicationSection />;
+    case 'revenue':
+      return <RevenueSection />;
+    case 'statistics':
+      return <StatisticsSection />;
+    case 'documents':
+      return <DocumentsSection />;
+    case 'notifications':
+      return <NotificationsSection />;
+    case 'team':
+      return <TeamSection />;
     default:
       return <Dashboard />;
   }
