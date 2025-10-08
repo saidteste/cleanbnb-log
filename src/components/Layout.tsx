@@ -87,7 +87,7 @@ export const Layout = ({ children }: LayoutProps) => {
         <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-card px-6 py-4 shadow-medium">
           <div className="flex h-16 shrink-0 items-center">
             <div className="bg-gradient-hero bg-clip-text text-transparent">
-              <h1 className="text-2xl font-bold">AirbnbManager</h1>
+              <h1 className="text-2xl font-bold">Gestion Airbnb Pro</h1>
             </div>
           </div>
           <nav className="flex flex-1 flex-col">
@@ -119,7 +119,7 @@ export const Layout = ({ children }: LayoutProps) => {
       <div className="lg:hidden">
         <div className="flex items-center justify-between p-4 border-b border-border">
           <div className="bg-gradient-hero bg-clip-text text-transparent">
-            <h1 className="text-xl font-bold">AirbnbManager</h1>
+            <h1 className="text-xl font-bold">Gestion Airbnb Pro</h1>
           </div>
           <Button
             variant="ghost"
